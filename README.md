@@ -3,7 +3,7 @@
 This repository contains: 
 
 [1] run_analysis.R - R scripts that read, modify, and manipulate the original training and test data sets to get a tidy data set, called "tidydata.txt". Note that all data files should be placed in the working directory for this R code to run successfully. 
-    To be a more specific, run_analysis.R does the following: 
+    To be more specific, run_analysis.R does the following: 
 
     1. Merges the training and the test sets to create one data set.
     2. Extracts only the measurements on the mean and standard deviation for each measurement. 
