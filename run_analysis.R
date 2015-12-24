@@ -5,14 +5,14 @@
 ##0.1. Load train dataset
 
 X_train <- read.table("X_train.txt", sep="", dec = '.', header = FALSE)
-dim(X_train) # [1] 7352  561
+#dim(X_train) # [1] 7352  561
 subject_train <- read.table("subject_train.txt", sep="", dec = '.', header = FALSE)
 y_train <- read.table("y_train.txt", sep="", dec = '.', header = FALSE)
 
 ##0.2. Load test dataset
 
 X_test <- read.table("X_test.txt", sep="", dec = '.', header = FALSE)
-dim(X_test) # [1] 2947  561
+#dim(X_test) # [1] 2947  561
 subject_test <- read.table("subject_test.txt", sep="", dec = '.', header = FALSE)
 y_test <- read.table("y_test.txt", sep="", dec = '.', header = FALSE)
 
@@ -22,7 +22,7 @@ y_test <- read.table("y_test.txt", sep="", dec = '.', header = FALSE)
 train <- cbind(subject_train,y_train, X_train) #create a complete "train" dataset
 test <- cbind(subject_test,y_test, X_test) #create a complete "test" dataset
 data_all <- rbind(train,test) #Merge the training and the test sets to create one data set
-dim(data_all) # [1] 10299   563
+#dim(data_all) # [1] 10299   563
 
 
 ##2.Extract only the measurements on the mean & St.Dev for each measurement. 
@@ -39,7 +39,7 @@ colnames(data_all)[3:563] <- as.character(features$V2)
 ##     along with first two identifier variables columns 
 
 data_mean_std <- data_all[,which(grepl("V1|mean()|std()", colnames(data_all)))]
-head(data_mean_std)
+#head(data_mean_std)
   # Note that V1 and V1.1 are the First two colume names for Subject ID and Activity, 
   # and these column names will be changed accordingly as follows: 
 
@@ -61,7 +61,7 @@ for (i in 1:6){
     data_mean_std$Activity[data_mean_std$Activity == i] <- as.character(activity_names$V2[i])
 } 
 
-class(data_mean_std$Activity) # [1] "character" 
+#class(data_mean_std$Activity) # [1] "character" 
 # Note that the class of this variable is now "character". This will be changed to factor later.
 
 
@@ -88,7 +88,7 @@ data_mean_std$Activity <- as.factor(data_mean_std$Activity)
 library(dplyr)
 data_by_groups <- group_by(data_mean_std,Subject.ID,Activity) 
 tidydata <- summarise_each(data_by_groups,funs(mean))
-dim(tidydata) # [1] 180  81
+#dim(tidydata) # [1] 180  81
 # 180 is the number of subjects multiplied by the number of activities
 # 81 is the 79 measurements + 2 identifier variables(Subject.ID, Activity)
 
