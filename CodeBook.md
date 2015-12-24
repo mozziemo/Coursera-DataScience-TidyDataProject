@@ -13,7 +13,7 @@ Please visit http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+U
 
 The tidy data set, "tidydata.txt", has been created by the following steps.
 
-1.	Merged the training data set("X_train.txt", 7352 rows, 561 columns; "subject_train.txt", 7352 rows, 1 column;"y_train.txt", 7352 rows, 1 column) and the test data ("y_train.txt", 2947 rows, 561 columns; "subject_test.txt", 2947 rows, 1 column; "y_test.txt", 2947 rows, 1 column) to create one combined data set (10299 rows, 563 columns).
+1.	Merged the training data set("X_train.txt", 7352 rows, 561 columns; "subject_train.txt", 7352 rows, 1 column;"y_train.txt", 7352 rows, 1 column) and the test data ("X_test.txt", 2947 rows, 561 columns; "subject_test.txt", 2947 rows, 1 column; "y_test.txt", 2947 rows, 1 column) to create one combined data set (10299 rows, 563 columns).
 
 2.	Extracted only the measurements on the mean and standard deviation for each measurement: In R, 'grepl()' function was used to select columns that contain either mean() or std() in the column names for the measurements.
   
