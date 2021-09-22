@@ -1,3 +1,6 @@
+# Coursera Johns Hopkins Data Science Specialization
+#### https://www.coursera.org/specializations/jhu-data-science
+
 ## Getting and Cleaning Data Course Project
 
 This repository contains: 
